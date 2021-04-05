@@ -13,4 +13,8 @@ object Repository {
         if (isLoggedIn) return User("Antoxa","passw0rd")
         throw IllegalAccessError("User is not authenticated")
     }
+
+    fun reset() {
+        isLoggedIn = false
+    }
 }
