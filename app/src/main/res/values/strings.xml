@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PetFoodInspector</string>
+    <string name="button_login">login</string>
+
+    <string name="password_placeholder">Password: %1$s</string>
+    <string name="login_placeholder">Login: %1$s</string>
 </resources>
