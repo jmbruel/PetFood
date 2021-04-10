@@ -18,8 +18,14 @@ data class FoodUI(
     override val viewType: Int = R.layout.item_food
 ) : ViewTyped
 
-class FoodViewHolder(private val binding: ItemFoodBinding) : BaseViewHolder<FoodUI>(binding.root) {
+class FoodViewHolder(
+    private val binding: ItemFoodBinding,
+    private val clickCallback: (FoodUI) -> Unit
+) :
+    BaseViewHolder<FoodUI>(binding.root) {
     override fun bind(item: FoodUI) {
+        binding.root.setOnClickListener { clickCallback(item) }
+
         Glide.with(binding.foodPicture).load(item.pictureUrl).into(binding.foodPicture)
         binding.foodName.text = item.name
         binding.dangerLevel.text = item.dangerLevel.levelString

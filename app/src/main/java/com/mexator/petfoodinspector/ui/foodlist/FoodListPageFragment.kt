@@ -7,10 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.mexator.petfoodinspector.R
 import com.mexator.petfoodinspector.databinding.FragmentPageFoodlistBinding
 import com.mexator.petfoodinspector.ui.dpToPx
+import com.mexator.petfoodinspector.ui.fooddetail.FoodDetailFragment
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodHolderFactory
+import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI
 import com.mexator.petfoodinspector.ui.recycler.BaseAdapter
 import com.mexator.petfoodinspector.ui.recycler.base.ViewTyped
 import com.mexator.petfoodinspector.ui.recycler.common.SpaceDecorator
@@ -21,7 +26,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FoodListPageFragment : Fragment() {
     private lateinit var binding: FragmentPageFoodlistBinding
-    private val adapter = BaseAdapter<ViewTyped>(FoodHolderFactory())
+    private val adapter = BaseAdapter<ViewTyped>(FoodHolderFactory(this::onFoodClicked))
     private val foodListViewModel: FoodListViewModel by viewModels()
     private var viewModelDisposable: Disposable? = null
 
@@ -60,6 +65,14 @@ class FoodListPageFragment : Fragment() {
         binding.foodProgress.visibility = if (state.progress) View.VISIBLE else View.INVISIBLE
         adapter.items = state.displayedItems
     }
+
+    private fun onFoodClicked(food: FoodUI) {
+        val navController = findNavController()
+        val args: Bundle = Bundle()
+        args.putInt(FoodDetailFragment.ARG_FOOD_KEY, food.uid)
+        navController.navigate(R.id.action_foodListPageFragment_to_foodDetailFragment,args)
+    }
+
 
     companion object {
         const val TAG = "FoodListPageFragment"

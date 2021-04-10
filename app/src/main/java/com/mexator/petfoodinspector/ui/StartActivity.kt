@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.NavHostFragment
 import com.mexator.petfoodinspector.R
 import com.mexator.petfoodinspector.data.Repository
 import com.mexator.petfoodinspector.databinding.ActivityStartBinding
@@ -19,16 +20,5 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        binding.loginButton.setOnClickListener {
-            repo.login()
-            val intent = Intent(this, AuthorizedActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        supportFragmentManager.commit {
-            add(R.id.fragmentContainer, FoodListPageFragment(), null)
-        }
     }
 }

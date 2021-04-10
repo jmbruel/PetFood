@@ -1,7 +1,9 @@
 package com.mexator.petfoodinspector.data.mock
 
 import com.mexator.petfoodinspector.data.DangerLevel
+import com.mexator.petfoodinspector.data.FoodID
 import com.mexator.petfoodinspector.data.FoodRepository
+import com.mexator.petfoodinspector.data.pojo.FoodDetail
 import com.mexator.petfoodinspector.data.pojo.FoodItem
 import io.reactivex.rxjava3.core.Single
 import java.util.concurrent.TimeUnit
@@ -12,7 +14,7 @@ object MockRepository : FoodRepository {
         "https://cdn.britannica.com/75/174375-050-BC6968AE/Hazelnuts-fruit-compound-ovary-seed.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg",
     )
-    private var id: Int = 1
+    private var id: Int = 0
         get() = field++
 
     private val foods = listOf<FoodItem>(
@@ -30,4 +32,23 @@ object MockRepository : FoodRepository {
     override fun getFoodList(): Single<List<FoodItem>> =
         Single.just(foods)
             .delay(500, TimeUnit.MILLISECONDS)
+
+    override fun getDetail(id: FoodID): Single<FoodDetail> =
+        Single.just(
+            FoodDetail(
+                urls[id % urls.size],
+                """
+                What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type 
+                specimen book. It has survived not only five centuries, but also the leap into 
+                electronic typesetting, remaining essentially unchanged. It was popularised in 
+                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including 
+                versions of Lorem Ipsum.
+            """.trimIndent()
+            )
+        )
+
 }
