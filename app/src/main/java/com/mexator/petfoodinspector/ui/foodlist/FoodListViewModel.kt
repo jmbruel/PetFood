@@ -13,12 +13,16 @@ import io.reactivex.rxjava3.subjects.BehaviorSubject
 
 class FoodListViewModel : ViewModel() {
     data class FoodListViewState(
-        val displayedItems: List<FoodUI>
+        val progress: Boolean = false,
+        val displayedItems: List<FoodUI> = listOf(),
     )
 
     private val _viewState: BehaviorSubject<FoodListViewState> = BehaviorSubject.create()
     val viewState: Observable<FoodListViewState> = _viewState
-        .doOnSubscribe {loadInitialContent()}
+        .doOnSubscribe { loadInitialContent() }
+    init {
+        _viewState.onNext(FoodListViewState())
+    }
     private val compositeDisposable = CompositeDisposable()
 
     private val repository: FoodRepository = MockRepository
@@ -30,10 +34,15 @@ class FoodListViewModel : ViewModel() {
 
     private fun loadInitialContent() {
         compositeDisposable += repository.getFoodList()
+            .doOnSubscribe {
+                _viewState.onNext(
+                    FoodListViewState(progress = true)
+                )
+            }
             .subscribeBy(
                 onSuccess = {
                     _viewState.onNext(
-                        FoodListViewState(it.map(this::mapItem))
+                        FoodListViewState(displayedItems = it.map(this::mapItem))
                     )
                 },
                 onError = {

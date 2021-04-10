@@ -56,6 +56,8 @@ class FoodListPageFragment : Fragment() {
     }
 
     private fun applyViewState(state: FoodListViewModel.FoodListViewState) {
+        binding.foodRecycler.visibility = if (state.progress) View.INVISIBLE else View.VISIBLE
+        binding.foodProgress.visibility = if (state.progress) View.VISIBLE else View.INVISIBLE
         adapter.items = state.displayedItems
     }
 
