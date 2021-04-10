@@ -27,6 +27,7 @@
             android:fontFamily="sans-serif-medium"
             android:textColor="@color/black"
             android:textSize="24sp"
+            android:layout_marginHorizontal="12dp"
 
             tools:text="Cinnamon pancakes" />
 

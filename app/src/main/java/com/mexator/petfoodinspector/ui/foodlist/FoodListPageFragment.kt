@@ -33,10 +33,11 @@ class FoodListPageFragment : Fragment() {
         binding.foodRecycler.adapter = adapter
         binding.foodRecycler.addItemDecoration(SpaceDecorator(requireContext().dpToPx(8)))
         binding.foodRecycler.layoutManager = LinearLayoutManager(binding.foodRecycler.context)
+        val imageUrl = "https://public-media.si-cdn.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg"
         adapter.items = listOf(
-            FoodUI("Banana", DangerLevel.Treat, 2),
-            FoodUI("Nuts", DangerLevel.Safe, 1),
-            FoodUI("Chocolate", DangerLevel.Danger, 3),
+            FoodUI("Banana", FoodPictureData(imageUrl), DangerLevel.Treat, 2),
+            FoodUI("Nuts", FoodPictureData(imageUrl), DangerLevel.Safe, 1),
+            FoodUI("Chocolate", FoodPictureData(imageUrl), DangerLevel.Danger, 3),
         )
     }
 }

@@ -2,15 +2,18 @@ package com.mexator.petfoodinspector.ui.foodlist.recycler
 
 import android.content.res.ColorStateList
 import androidx.core.content.res.ResourcesCompat
+import com.bumptech.glide.Glide
 import com.mexator.petfoodinspector.R
 import com.mexator.petfoodinspector.data.DangerLevel
 import com.mexator.petfoodinspector.databinding.ItemFoodBinding
+import com.mexator.petfoodinspector.ui.foodlist.FoodPictureData
 import com.mexator.petfoodinspector.ui.getResources
 import com.mexator.petfoodinspector.ui.recycler.BaseViewHolder
 import com.mexator.petfoodinspector.ui.recycler.base.ViewTyped
 
 data class FoodUI(
     val name: String,
+    val picture: FoodPictureData,
     val dangerLevel: DangerLevel,
     override val uid: Int,
     override val viewType: Int = R.layout.item_food
@@ -18,6 +21,7 @@ data class FoodUI(
 
 class FoodViewHolder(private val binding: ItemFoodBinding) : BaseViewHolder<FoodUI>(binding.root) {
     override fun bind(item: FoodUI) {
+        Glide.with(binding.foodPicture).load(item.picture.url).into(binding.foodPicture)
         binding.foodName.text = item.name
         binding.dangerLevel.text = item.dangerLevel.levelString
         val colorRes = when (item.dangerLevel) {
