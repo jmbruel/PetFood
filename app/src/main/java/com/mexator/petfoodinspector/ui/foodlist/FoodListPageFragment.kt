@@ -1,23 +1,29 @@
 package com.mexator.petfoodinspector.ui.foodlist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mexator.petfoodinspector.data.DangerLevel
 import com.mexator.petfoodinspector.databinding.FragmentPageFoodlistBinding
 import com.mexator.petfoodinspector.ui.dpToPx
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodHolderFactory
-import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI
 import com.mexator.petfoodinspector.ui.recycler.BaseAdapter
 import com.mexator.petfoodinspector.ui.recycler.base.ViewTyped
 import com.mexator.petfoodinspector.ui.recycler.common.SpaceDecorator
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.kotlin.subscribeBy
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FoodListPageFragment : Fragment() {
     private lateinit var binding: FragmentPageFoodlistBinding
     private val adapter = BaseAdapter<ViewTyped>(FoodHolderFactory())
+    private val foodListViewModel: FoodListViewModel by viewModels()
+    private var viewModelDisposable: Disposable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,11 +39,27 @@ class FoodListPageFragment : Fragment() {
         binding.foodRecycler.adapter = adapter
         binding.foodRecycler.addItemDecoration(SpaceDecorator(requireContext().dpToPx(8)))
         binding.foodRecycler.layoutManager = LinearLayoutManager(binding.foodRecycler.context)
-        val imageUrl = "https://public-media.si-cdn.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg"
-        adapter.items = listOf(
-            FoodUI("Banana", FoodPictureData(imageUrl), DangerLevel.Treat, 2),
-            FoodUI("Nuts", FoodPictureData(imageUrl), DangerLevel.Safe, 1),
-            FoodUI("Chocolate", FoodPictureData(imageUrl), DangerLevel.Danger, 3),
-        )
+
+        viewModelDisposable =
+            foodListViewModel.viewState
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeBy(
+                    onNext = this::applyViewState,
+                    onError = { throwable -> Log.d(TAG, "", throwable) }
+                )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModelDisposable?.dispose()
+    }
+
+    private fun applyViewState(state: FoodListViewModel.FoodListViewState) {
+        adapter.items = state.displayedItems
+    }
+
+    companion object {
+        const val TAG = "FoodListPageFragment"
     }
 }
