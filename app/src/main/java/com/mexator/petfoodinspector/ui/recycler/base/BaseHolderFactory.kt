@@ -24,7 +24,7 @@ abstract class BaseHolderFactory {
      * @return null, if the factory cannot create ViewHolder of given [viewType],
      * or created ViewHolder
      */
-    protected abstract fun createViewHolder(parent: View, viewType: Int): BaseViewHolder<*>?
+    protected abstract fun createViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*>?
 
     /**
      * Use it to create ViewHolders
@@ -35,7 +35,7 @@ abstract class BaseHolderFactory {
      */
     final fun create(parent: ViewGroup, viewType: Int): BaseViewHolder<ViewTyped> {
         val view = LayoutInflater.from(parent.context).inflate(viewType, parent, false)
-        return checkNotNull(createViewHolder(view, viewType)) {
+        return checkNotNull(createViewHolder(view as ViewGroup, viewType)) {
             val type = try {
                 parent.resources.getResourceName(viewType)
             } catch (ex: Resources.NotFoundException) {

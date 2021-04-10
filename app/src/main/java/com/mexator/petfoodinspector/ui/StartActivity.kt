@@ -3,9 +3,11 @@ package com.mexator.petfoodinspector.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import com.mexator.petfoodinspector.R
 import com.mexator.petfoodinspector.data.Repository
 import com.mexator.petfoodinspector.databinding.ActivityStartBinding
+import com.mexator.petfoodinspector.ui.foodlist.FoodListPageFragment
 
 class StartActivity : AppCompatActivity() {
     private val binding: ActivityStartBinding by lazy {
@@ -23,6 +25,10 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this, AuthorizedActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        supportFragmentManager.commit {
+            add(R.id.fragmentContainer, FoodListPageFragment(), null)
         }
     }
 }

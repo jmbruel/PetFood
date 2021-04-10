@@ -68,4 +68,5 @@ open class BaseAdapter<T : ViewTyped>(private val holderFactory: BaseHolderFacto
     }
 
     override fun getItemCount(): Int = items.size
+    override fun getItemViewType(position: Int): Int = items[position].viewType
 }
