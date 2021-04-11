@@ -9,7 +9,8 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy
-import io.reactivex.rxjava3.subjects.BehaviorSubject
+import io.reactivex.rxjava3.subjects.PublishSubject
+import java.util.*
 
 class FoodListViewModel : ViewModel() {
     data class FoodListViewState(
@@ -17,12 +18,24 @@ class FoodListViewModel : ViewModel() {
         val displayedItems: List<FoodUI> = listOf(),
     )
 
-    private val _viewState: BehaviorSubject<FoodListViewState> = BehaviorSubject.create()
-    val viewState: Observable<FoodListViewState> = _viewState
-        .doOnSubscribe {if (_viewState.value == null) loadInitialContent() }
+    private val searchQueries: PublishSubject<String> = PublishSubject.create()
+    private val foodListObservable: PublishSubject<List<FoodItem>> = PublishSubject.create()
+    private val progressObservable: PublishSubject<Boolean> = PublishSubject.create()
+
+    val viewState: Observable<FoodListViewState> =
+        Observable.combineLatest(
+            searchQueries,
+            foodListObservable,
+            progressObservable,
+            { query, foodList, progress ->
+                FoodListViewState(
+                    progress,
+                    foodList.filter { satisfiesQuery(it, query) }
+                        .map(this::mapItem))
+            }
+        )
 
     private val compositeDisposable = CompositeDisposable()
-
     private val repository: FoodRepository = MockRepository
 
     override fun onCleared() {
@@ -30,24 +43,21 @@ class FoodListViewModel : ViewModel() {
         compositeDisposable.clear()
     }
 
-    private fun loadInitialContent() {
+    fun submitQuery(query: String) = searchQueries.onNext(query)
+
+
+    fun loadInitialContent() {
         compositeDisposable += repository.getFoodList()
-            .doOnSubscribe {
-                _viewState.onNext(
-                    FoodListViewState(progress = true)
-                )
-            }
+            .doOnSubscribe { progressObservable.onNext(true) }
+            .doOnSuccess { progressObservable.onNext(false) }
             .subscribeBy(
-                onSuccess = {
-                    _viewState.onNext(
-                        FoodListViewState(displayedItems = it.map(this::mapItem))
-                    )
-                },
-                onError = {
-                    _viewState.onError(it)
-                }
+                onSuccess = { foodListObservable.onNext(it) },
+                onError = { foodListObservable.onError(it) }
             )
     }
+
+    private fun satisfiesQuery(food: FoodItem, query: String): Boolean =
+        food.name.toLowerCase(Locale.getDefault()).contains(query)
 
     private fun mapItem(foodItem: FoodItem): FoodUI {
         return FoodUI(foodItem.name, foodItem.imageUrl, foodItem.dangerLevel, foodItem.id)

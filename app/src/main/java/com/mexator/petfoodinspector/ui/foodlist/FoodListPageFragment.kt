@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,19 +15,21 @@ import com.mexator.petfoodinspector.ui.dpToPx
 import com.mexator.petfoodinspector.ui.fooddetail.FoodDetailFragment
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodHolderFactory
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI
+import com.mexator.petfoodinspector.ui.foodsearch.FoodSearchFragment
 import com.mexator.petfoodinspector.ui.recycler.BaseAdapter
 import com.mexator.petfoodinspector.ui.recycler.base.ViewTyped
 import com.mexator.petfoodinspector.ui.recycler.common.SpaceDecorator
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FoodListPageFragment : Fragment() {
     private lateinit var binding: FragmentPageFoodlistBinding
     private val adapter = BaseAdapter<ViewTyped>(FoodHolderFactory(this::onFoodClicked))
-    private val foodListViewModel: FoodListViewModel by navGraphViewModels(R.id.main_navigation)
-    private var viewModelDisposable: Disposable? = null
+    private val viewModel: FoodListViewModel by navGraphViewModels(R.id.main_navigation)
+    private var compositeDisposable = CompositeDisposable()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,19 +46,29 @@ class FoodListPageFragment : Fragment() {
         binding.foodRecycler.addItemDecoration(SpaceDecorator(requireContext().dpToPx(8)))
         binding.foodRecycler.layoutManager = LinearLayoutManager(binding.foodRecycler.context)
 
-        viewModelDisposable =
-            foodListViewModel.viewState
+        compositeDisposable += (parentFragment as FoodSearchFragment)
+            .searchObservable
+            .subscribeOn(Schedulers.computation())
+            .subscribeBy(
+                onNext = viewModel::submitQuery,
+                onError = { ex -> Log.wtf(TAG, "This should never happen", ex) }
+            )
+
+        compositeDisposable +=
+            viewModel.viewState
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                     onNext = this::applyViewState,
                     onError = { throwable -> Log.d(TAG, "", throwable) }
                 )
+
+        viewModel.loadInitialContent()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewModelDisposable?.dispose()
+        compositeDisposable.dispose()
     }
 
     private fun applyViewState(state: FoodListViewModel.FoodListViewState) {
@@ -71,7 +81,7 @@ class FoodListPageFragment : Fragment() {
         val navController = findNavController()
         val args: Bundle = Bundle()
         args.putInt(FoodDetailFragment.ARG_FOOD_KEY, food.uid)
-        navController.navigate(R.id.action_foodListPageFragment_to_foodDetailFragment, args)
+        navController.navigate(R.id.action_foodSearchFragment_to_foodDetailFragment, args)
     }
 
 
