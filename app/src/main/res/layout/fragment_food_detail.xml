@@ -29,6 +29,22 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
+        android:id="@+id/dangerLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_food_danger_level"
+        android:maxLines="1"
+        android:padding="4dp"
+        android:paddingHorizontal="8dp"
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/foodPicture"
+        app:layout_constraintTop_toTopOf="@+id/foodPicture"
+
+        tools:text="Danger" />
+
+    <TextView
         android:id="@+id/foodDetailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

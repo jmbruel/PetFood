@@ -1,16 +1,18 @@
 package com.mexator.petfoodinspector.ui.fooddetail
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.mexator.petfoodinspector.databinding.FragmentFoodDetailBinding
 import com.mexator.petfoodinspector.ui.foodlist.FoodListPageFragment
-import com.mexator.petfoodinspector.ui.foodlist.FoodListViewModel
+import com.mexator.petfoodinspector.ui.getResources
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.subscribeBy
@@ -52,7 +54,16 @@ class FoodDetailFragment : Fragment() {
 
     private fun applyViewState(state: FoodDetailViewModel.FoodDetailViewState) {
         binding.foodDetailText.text = state.foodDetail.detailText
-        Glide.with(binding.foodPicture).load(state.foodDetail.url).into(binding.foodPicture)
+        state.foodDetail.foodItem.let { item ->
+            Glide.with(binding.foodPicture)
+                .load(item.imageUrl)
+                .into(binding.foodPicture)
+
+            binding.dangerLevel.text = item.dangerLevel.levelString
+            val color =
+                ResourcesCompat.getColor(binding.getResources(), item.dangerLevel.colorRes, null)
+            binding.dangerLevel.backgroundTintList = ColorStateList.valueOf(color)
+        }
     }
 
     companion object {

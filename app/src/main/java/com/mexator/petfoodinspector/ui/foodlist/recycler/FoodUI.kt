@@ -29,12 +29,8 @@ class FoodViewHolder(
         Glide.with(binding.foodPicture).load(item.pictureUrl).into(binding.foodPicture)
         binding.foodName.text = item.name
         binding.dangerLevel.text = item.dangerLevel.levelString
-        val colorRes = when (item.dangerLevel) {
-            DangerLevel.Danger -> R.color.red_500
-            DangerLevel.Safe -> R.color.green_500
-            DangerLevel.Treat -> R.color.yellow_500
-        }
-        val color = ResourcesCompat.getColor(binding.getResources(), colorRes, null)
+        val color =
+            ResourcesCompat.getColor(binding.getResources(), item.dangerLevel.colorRes, null)
         binding.dangerLevel.backgroundTintList = ColorStateList.valueOf(color)
     }
 }

@@ -36,7 +36,7 @@ object MockRepository : FoodRepository {
     override fun getDetail(id: FoodID): Single<FoodDetail> =
         Single.just(
             FoodDetail(
-                urls[id % urls.size],
+                foods[id % urls.size],
                 """
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
