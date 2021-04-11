@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mexator.petfoodinspector.R
 import com.mexator.petfoodinspector.databinding.FragmentPageFoodlistBinding
@@ -27,7 +28,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 class FoodListPageFragment : Fragment() {
     private lateinit var binding: FragmentPageFoodlistBinding
     private val adapter = BaseAdapter<ViewTyped>(FoodHolderFactory(this::onFoodClicked))
-    private val foodListViewModel: FoodListViewModel by viewModels()
+    private val foodListViewModel: FoodListViewModel by navGraphViewModels(R.id.main_navigation)
     private var viewModelDisposable: Disposable? = null
 
     override fun onCreateView(
@@ -70,7 +71,7 @@ class FoodListPageFragment : Fragment() {
         val navController = findNavController()
         val args: Bundle = Bundle()
         args.putInt(FoodDetailFragment.ARG_FOOD_KEY, food.uid)
-        navController.navigate(R.id.action_foodListPageFragment_to_foodDetailFragment,args)
+        navController.navigate(R.id.action_foodListPageFragment_to_foodDetailFragment, args)
     }
 
 

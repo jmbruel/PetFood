@@ -5,13 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ProgressBar
+        android:id="@+id/photoProgress"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/foodPicture"
+        app:layout_constraintEnd_toEndOf="@+id/foodPicture"
+        app:layout_constraintStart_toStartOf="@+id/foodPicture"
+        app:layout_constraintTop_toTopOf="@+id/foodPicture" />
+
     <ImageView
         android:id="@+id/foodPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:scaleType="fitCenter"
 
-        app:layout_constraintHeight_max="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -19,10 +19,8 @@ class FoodListViewModel : ViewModel() {
 
     private val _viewState: BehaviorSubject<FoodListViewState> = BehaviorSubject.create()
     val viewState: Observable<FoodListViewState> = _viewState
-        .doOnSubscribe { loadInitialContent() }
-    init {
-        _viewState.onNext(FoodListViewState())
-    }
+        .doOnSubscribe {if (_viewState.value == null) loadInitialContent() }
+
     private val compositeDisposable = CompositeDisposable()
 
     private val repository: FoodRepository = MockRepository
