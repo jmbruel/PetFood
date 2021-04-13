@@ -6,6 +6,7 @@ import com.mexator.petfoodinspector.data.FoodRepository
 import com.mexator.petfoodinspector.data.pojo.FoodDetail
 import com.mexator.petfoodinspector.data.pojo.FoodItem
 import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.subjects.BehaviorSubject
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.io.ByteArrayOutputStream
@@ -20,14 +21,25 @@ object LocalRepository : FoodRepository {
         appContext = context
     }
 
+    private val foodListSubject: BehaviorSubject<List<LocalFoodItem>> = BehaviorSubject.create()
+
     override fun getFoodList(): Single<List<FoodItem>> {
         val assets = appContext.assets
         val foodsJSON = assets.open(DATA_FILENAME).readToString()
-        return Single.just(json.decodeFromString<List<FoodItem>>(foodsJSON))
+
+        val items = json.decodeFromString<List<LocalFoodItem>>(foodsJSON)
+        foodListSubject.onNext(items)
+
+        return foodListSubject
+            .map { list -> list.map { it.toFoodItem() } }
+            .firstOrError()
     }
 
     override fun getDetail(id: FoodID): Single<FoodDetail> {
-        TODO("Not yet implemented")
+        return foodListSubject
+            .map { list -> list.filter { item -> item.id == id }.get(0) }
+            .map { item -> item.toFoodDetail() }
+            .firstOrError()
     }
 
     private fun InputStream.readToString(): String {
