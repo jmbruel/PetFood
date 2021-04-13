@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/foodSearchFragment">
+
+    <fragment
+        android:id="@+id/foodSearchFragment"
+        android:name="com.mexator.petfoodinspector.ui.foodsearch.FoodSearchFragment"
+        android:label="FoodSearchFragment" >
+        <action
+            android:id="@+id/action_foodSearchFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.mexator.petfoodinspector.ui.fooddetail.FoodDetailFragment"
+        android:label="FoodDetailFragment">
+
+        <argument
+            android:name="foodId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
