@@ -10,6 +10,7 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy
+import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.*
 
@@ -19,7 +20,7 @@ class FoodListViewModel : ViewModel() {
         val displayedItems: List<FoodUI> = listOf(),
     )
 
-    private val searchQueries: PublishSubject<String> = PublishSubject.create()
+    private val searchQueries: BehaviorSubject<String> = BehaviorSubject.create()
     private val foodListObservable: PublishSubject<List<FoodItem>> = PublishSubject.create()
     private val progressObservable: PublishSubject<Boolean> = PublishSubject.create()
 
