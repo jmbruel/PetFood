@@ -3,6 +3,7 @@ package com.mexator.petfoodinspector.data.local
 import com.mexator.petfoodinspector.data.DangerLevel
 import com.mexator.petfoodinspector.data.pojo.FoodDetail
 import com.mexator.petfoodinspector.data.pojo.FoodItem
+import com.mexator.petfoodinspector.ui.data.FoodPicture
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
@@ -29,7 +30,7 @@ class LocalFoodItem(
             "with_care" -> DangerLevel.Treat
             else -> error("Cannot deserialize: unknown category: $category")
         }
-        return FoodItem(id, name, dangerLevel, imageUrl)
+        return FoodItem(id, name, dangerLevel, FoodPicture.LocalFoodPicture(imageUrl))
     }
 
     fun toFoodDetail(): FoodDetail {

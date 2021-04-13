@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.mexator.petfoodinspector.databinding.FragmentFoodDetailBinding
+import com.mexator.petfoodinspector.ui.data.FoodPictureDrawableFactory
 import com.mexator.petfoodinspector.ui.foodlist.FoodListPageFragment
 import com.mexator.petfoodinspector.ui.getResources
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -55,9 +57,20 @@ class FoodDetailFragment : Fragment() {
     private fun applyViewState(state: FoodDetailViewModel.FoodDetailViewState) {
         binding.foodDetailText.text = state.foodDetail.detailText
         state.foodDetail.foodItem.let { item ->
-            Glide.with(binding.foodPicture)
-                .load(item.imageUrl)
-                .into(binding.foodPicture)
+            Single.defer {
+                Single.just(
+                    FoodPictureDrawableFactory().createDrawable(
+                        binding.foodPicture.context,
+                        item.imageData
+                    )
+                )
+            }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeBy(
+                    onSuccess = { binding.foodPicture.setImageDrawable(it) }
+                )
+
 
             binding.dangerLevel.text = item.dangerLevel.levelString
             val color =

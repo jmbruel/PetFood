@@ -61,6 +61,6 @@ class FoodListViewModel : ViewModel() {
         food.name.toLowerCase(Locale.getDefault()).contains(query)
 
     private fun mapItem(foodItem: FoodItem): FoodUI {
-        return FoodUI(foodItem.name, foodItem.imageUrl, foodItem.dangerLevel, foodItem.id)
+        return FoodUI(foodItem.name, foodItem.imageData, foodItem.dangerLevel, foodItem.id)
     }
 }
