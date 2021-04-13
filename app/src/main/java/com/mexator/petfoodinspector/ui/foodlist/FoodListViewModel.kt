@@ -1,5 +1,6 @@
 package com.mexator.petfoodinspector.ui.foodlist
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.mexator.petfoodinspector.data.FoodRepository
 import com.mexator.petfoodinspector.data.local.LocalRepository
@@ -30,6 +31,7 @@ class FoodListViewModel : ViewModel() {
             foodListObservable,
             progressObservable,
             { query, foodList, progress ->
+                Log.d(TAG, query)
                 FoodListViewState(
                     progress,
                     foodList.filter { satisfiesQuery(it, query) }
@@ -63,5 +65,9 @@ class FoodListViewModel : ViewModel() {
 
     private fun mapItem(foodItem: FoodItem): FoodUI {
         return FoodUI(foodItem.name, foodItem.imageData, foodItem.dangerLevel, foodItem.id)
+    }
+
+    companion object {
+        private const val TAG = "FoodListViewModel"
     }
 }
