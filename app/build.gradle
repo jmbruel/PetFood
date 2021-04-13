@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -16,7 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    
+
     sourceSets {
         main {
             assets.srcDirs = ['../data']
@@ -60,6 +61,8 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxjava:$rx_version"
     implementation "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
     implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:$kotlinx_serialization_version"
 
 
     testImplementation 'junit:junit:4.+'

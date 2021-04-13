@@ -18,15 +18,15 @@ object MockRepository : FoodRepository {
         get() = field++
 
     private val foods = listOf<FoodItem>(
-        FoodItem(id, "Banana", DangerLevel.Treat, urls[0]),
-        FoodItem(id, "Nut", DangerLevel.Safe, urls[1]),
-        FoodItem(id, "Chocolate", DangerLevel.Danger, urls[2]),
-        FoodItem(
-            id,
-            "Item with very, very, very, very, very, very, very, very, very, very, very long name",
-            DangerLevel.Danger,
-            urls[2]
-        ),
+//        FoodItem(id, "Banana", DangerLevel.Treat, urls[0]),
+//        FoodItem(id, "Nut", DangerLevel.Safe, urls[1]),
+//        FoodItem(id, "Chocolate", DangerLevel.Danger, urls[2]),
+//        FoodItem(
+//            id,
+//            "Item with very, very, very, very, very, very, very, very, very, very, very long name",
+//            DangerLevel.Danger,
+//            urls[2]
+//        ),
     )
 
     override fun getFoodList(): Single<List<FoodItem>> =

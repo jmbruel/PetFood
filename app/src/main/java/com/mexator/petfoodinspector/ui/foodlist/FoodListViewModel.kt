@@ -2,6 +2,7 @@ package com.mexator.petfoodinspector.ui.foodlist
 
 import androidx.lifecycle.ViewModel
 import com.mexator.petfoodinspector.data.FoodRepository
+import com.mexator.petfoodinspector.data.local.LocalRepository
 import com.mexator.petfoodinspector.data.mock.MockRepository
 import com.mexator.petfoodinspector.data.pojo.FoodItem
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI
@@ -36,7 +37,7 @@ class FoodListViewModel : ViewModel() {
         )
 
     private val compositeDisposable = CompositeDisposable()
-    private val repository: FoodRepository = MockRepository
+    private val repository: FoodRepository = LocalRepository
 
     override fun onCleared() {
         super.onCleared()
