@@ -16,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_URL", "\"http://10.0.2.2:8080/api/v1/\"")
     }
 
     sourceSets {
@@ -63,6 +65,12 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
 
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:$kotlinx_serialization_version"
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofit_rx_calladapter_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$retrofit_serialization_converter_version"
 
 
     testImplementation 'junit:junit:4.+'
