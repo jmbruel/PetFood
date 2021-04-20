@@ -4,4 +4,7 @@
 
     <string name="password_placeholder">Password: %1$s</string>
     <string name="login_placeholder">Login: %1$s</string>
+
+    <string name="login_dest">Login</string>
+    <string name="search_foods_dest">Search for foods</string>
 </resources>

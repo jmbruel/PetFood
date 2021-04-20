@@ -2,9 +2,10 @@ package com.mexator.petfoodinspector.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.mexator.petfoodinspector.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
@@ -23,11 +24,27 @@ class StartActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        setupActionBarWithNavController(navController, AppBarConfiguration(navController.graph))
+        binding.navView.setupWithNavController(navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        navController.popBackStack()
-        return super.onSupportNavigateUp()
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+            return false
+        } else {
+            return NavigationUI.navigateUp(navController, binding.drawerLayout)
+        }
+    }
+
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else
+            super.onBackPressed()
+    }
+
+    companion object {
+        private const val TAG = "StartActivity"
     }
 }
