@@ -21,7 +21,9 @@ interface UserRepository {
     fun isUserLoggedIn(): Boolean
 
     /**
-     * Function to login with user credentials
+     * Function to login with user credentials. If it completes without errors,
+     * log in was completed successfully. It also remembers user, which can be
+     * obtained then with [getSelfUser]
      *
      * @throws IllegalStateException if a user is already logged in
      * @see logout

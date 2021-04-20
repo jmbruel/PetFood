@@ -16,6 +16,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 /**
@@ -29,9 +30,18 @@ object RemoteRepository : FoodRepository, UserRepository {
     private var currentUser: User? = null
 
     init {
+        val client = OkHttpClient.Builder()
+            .apply {
+                if (BuildConfig.DEBUG) addInterceptor(
+                    HttpLoggingInterceptor()
+                        .apply { setLevel(HttpLoggingInterceptor.Level.BODY) }
+                )
+            }
+            .build()
+
         val contentType: MediaType = "application/json".toMediaType()
         val retrofit: Retrofit = Retrofit.Builder()
-            .client(OkHttpClient())
+            .client(client)
             .baseUrl(baseUrl)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.createAsync())
             .addConverterFactory(Json { ignoreUnknownKeys = true }.asConverterFactory(contentType))
