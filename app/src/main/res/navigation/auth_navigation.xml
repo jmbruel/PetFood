@@ -5,7 +5,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.mexator.petfoodinspector.ui.auth.LoginFragment"
+        android:name="com.mexator.petfoodinspector.ui.auth.login.LoginFragment"
         android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
@@ -13,6 +13,6 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.mexator.petfoodinspector.ui.auth.SignUpFragment"
+        android:name="com.mexator.petfoodinspector.ui.auth.signup.SignUpFragment"
         android:label="SignUpFragment" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.mexator.petfoodinspector.ui.auth
+package com.mexator.petfoodinspector.ui.auth.signup
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,21 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.mexator.petfoodinspector.databinding.AuthFieldsBinding
-import com.mexator.petfoodinspector.databinding.FragmentLoginBinding
+import com.mexator.petfoodinspector.databinding.FragmentSignUpBinding
 import com.mexator.petfoodinspector.ui.StartActivity
-import com.mexator.petfoodinspector.ui.auth.login.*
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.kotlin.plusAssign
 
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
+class SignUpFragment : Fragment() {
+    private lateinit var binding: FragmentSignUpBinding
     private lateinit var fieldsBinding: AuthFieldsBinding
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: SignUpViewModel by viewModels()
+    private val viewModelDisposable = CompositeDisposable()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+        binding = FragmentSignUpBinding.inflate(inflater, container, false)
         fieldsBinding = AuthFieldsBinding.bind(binding.root)
         return binding.root
     }
@@ -31,9 +33,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.viewState.subscribe(this::render)
+        viewModelDisposable +=
+            viewModel.viewState.subscribe(this::render)
 
-        binding.buttonLogin.setOnClickListener {
+        binding.buttonSignUp.setOnClickListener {
             viewModel.logIn(
                 fieldsBinding.emailField.text.toString(),
                 fieldsBinding.passwordField.text.toString()
@@ -41,7 +44,7 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun render(state: LoginViewState) {
+    private fun render(state: SignInViewState) {
         when (state) {
             is ProgressState -> {
                 binding.progress.visibility = View.VISIBLE

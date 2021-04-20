@@ -1,4 +1,4 @@
-package com.mexator.petfoodinspector.ui.auth.login
+package com.mexator.petfoodinspector.ui.auth.signup
 
 import androidx.lifecycle.ViewModel
 import com.mexator.petfoodinspector.data.UserRepository
@@ -11,14 +11,14 @@ import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import retrofit2.HttpException
 
-sealed class LoginViewState
-object ProgressState : LoginViewState()
-object SuccessState : LoginViewState()
-class ErrorState(val message: String) : LoginViewState()
+sealed class SignInViewState
+object ProgressState : SignInViewState()
+object SuccessState : SignInViewState()
+class ErrorState(val message: String) : SignInViewState()
 
-class LoginViewModel : ViewModel() {
-    private val _viewState: BehaviorSubject<LoginViewState> = BehaviorSubject.create()
-    val viewState: Observable<LoginViewState> = _viewState
+class SignUpViewModel : ViewModel() {
+    private val _viewState: BehaviorSubject<SignInViewState> = BehaviorSubject.create()
+    val viewState: Observable<SignInViewState> = _viewState
 
     private val repository: UserRepository = RemoteRepository
     private val compositeDisposable = CompositeDisposable()
@@ -27,7 +27,8 @@ class LoginViewModel : ViewModel() {
         _viewState.onNext(ProgressState)
 
         compositeDisposable += repository
-            .login(login, password)
+            .register(login, password)
+            .ignoreElement()
             .subscribeBy(
                 onComplete = { _viewState.onNext(SuccessState) },
                 onError = {
@@ -47,6 +48,6 @@ class LoginViewModel : ViewModel() {
     }
 
     companion object {
-        private const val TAG = "LoginViewModel"
+        private const val TAG = "SignUpViewModel"
     }
 }

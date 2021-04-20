@@ -15,4 +15,12 @@
         android:textAllCaps="false"
         android:textSize="18sp" />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
 </LinearLayout>

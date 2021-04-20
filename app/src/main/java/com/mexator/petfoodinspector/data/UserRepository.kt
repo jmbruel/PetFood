@@ -22,8 +22,9 @@ interface UserRepository {
 
     /**
      * Function to login with user credentials. If it completes without errors,
-     * log in was completed successfully. It also remembers user, which can be
-     * obtained then with [getSelfUser]
+     * log in was completed successfully.
+     *
+     * It also remembers user, which can be obtained then with [getSelfUser]
      *
      * @throws IllegalStateException if a user is already logged in
      * @see logout
@@ -43,7 +44,9 @@ interface UserRepository {
     /**
      * Try to create new user. If user is successfully created,
      * returned `Single` will emit a value, otherwise it will end with
-     * error
+     * error.
+     *
+     * It also remembers user, which can be obtained then with [getSelfUser]
      */
     fun register(username: String, password: String): Single<User>
 
