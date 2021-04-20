@@ -11,7 +11,8 @@ Similar apps:
 
 # Sprint 2
 
-At this sprint our goal was to make our android application to be able to operate over network with some backend. Our tasks were: Create some backend, capable of returning food info, with some authentication mechanism (see #21), Design UI(#23), and update android app to conform backend(#22). Also we set up CI/CD for android app, which just builds an app for now (and makes sure, that it builds successfully). 
+At this sprint our goal was to make our android application to be able to operate over network with some backend. Our tasks were: Create some backend, capable of returning food info, with some authentication mechanism (see #21), Design UI(#23), and update android app to conform backend(#22). 
+Also we set up CI/CD for android app, which just builds an app for now (and makes sure, that it builds successfully). Result of build -- **ready APK** -- is also generated and available for download
 
 We made a progress on US #3 and #17, but haven't completed them, since they are large (and we didn't plan it). For now, there were no sprint review with PO, so we don't close any issues yet. 
 
