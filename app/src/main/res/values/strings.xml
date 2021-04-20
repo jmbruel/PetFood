@@ -5,6 +5,7 @@
     <string name="login_placeholder">Login: %1$s</string>
 
     <!--  Drawer labels  -->
+    <string name="header_text_no_user">Data not synchronised</string>
     <string name="login_dest">Login</string>
     <string name="search_foods_dest">Search for foods</string>
 

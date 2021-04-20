@@ -60,7 +60,9 @@ object RemoteRepository : FoodRepository, UserRepository {
     override fun isUserLoggedIn(): Boolean = currentUser != null
 
     override fun login(username: String, password: String): Completable =
-        petFoodAPI.logIn(UserAuth(username, password)).ignoreElement()
+        petFoodAPI.logIn(UserAuth(username, password))
+            .doOnSuccess { currentUser = it }
+            .ignoreElement()
 
     override fun logout(): Completable {
         currentUser = null
@@ -69,6 +71,7 @@ object RemoteRepository : FoodRepository, UserRepository {
 
     override fun register(username: String, password: String): Single<User> =
         petFoodAPI.signUp(UserAuth(username, password))
+            .doOnSuccess { currentUser = it }
 
     override fun getSelfUser(): Maybe<User> =
         currentUser?.let { Maybe.just(it) } ?: Maybe.empty()
