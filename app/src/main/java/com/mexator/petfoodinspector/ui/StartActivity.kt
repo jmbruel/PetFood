@@ -59,13 +59,21 @@ class StartActivity : AppCompatActivity() {
 
     private fun updateDrawer(state: DrawerState) {
         if (BuildConfig.DEBUG) Log.d(TAG, state.toString())
+        val loginItem = binding.navView.menu.findItem(R.id.authActivity)
+
         if (state.user != null) {
             drawerHeaderBinding.usernameView.text = "Not implemented yet"
             drawerHeaderBinding.emailView.visibility = View.VISIBLE
             drawerHeaderBinding.emailView.text = state.user.email
+
+            loginItem.setIcon(R.drawable.ic_logout_24)
+            loginItem.setTitle(R.string.logout_title)
         } else {
             drawerHeaderBinding.emailView.visibility = View.GONE
             drawerHeaderBinding.usernameView.setText(R.string.header_text_no_user)
+
+            loginItem.setIcon(R.drawable.ic_account_24)
+            loginItem.setTitle(R.string.login_title)
         }
     }
 

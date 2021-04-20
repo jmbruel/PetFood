@@ -6,6 +6,8 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.mexator.petfoodinspector.data.UserRepository
+import com.mexator.petfoodinspector.data.network.RemoteRepository
 import com.mexator.petfoodinspector.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -16,6 +18,8 @@ class AuthActivity : AppCompatActivity() {
         Navigation.findNavController(binding.fragmentContainer)
     }
 
+    private val repository: UserRepository = RemoteRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -24,6 +28,7 @@ class AuthActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         NavigationUI.setupActionBarWithNavController(this, navController)
+        repository.logout().subscribe()
     }
 
     override fun onSupportNavigateUp(): Boolean {
