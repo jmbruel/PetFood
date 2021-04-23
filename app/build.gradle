@@ -5,12 +5,20 @@ plugins {
     id 'org.jetbrains.dokka'
 }
 
-dokkaHtml.configure {
+dokkaHtml {
     dokkaSourceSets {
         named("main") {
+            jdkVersion.set(8)
+            noStdlibLink.set(false)
+            noJdkLink.set(false)
             noAndroidSdkLink.set(false)
         }
     }
+}
+tasks.withType(dokkaHtml.getClass()).configureEach {
+    pluginsMapConfiguration.set(
+            ["org.jetbrains.dokka.base.DokkaBase": """{ "separateInheritedMembers": true}"""]
+    )
 }
 
 android {
