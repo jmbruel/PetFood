@@ -18,21 +18,22 @@ jobs:
         with:
           java-version: 1.8
       
-      - name: Build project
-        run: ./gradlew assembleDebug
-      - name: Upload debug version
-        uses: actions/upload-artifact@v2
-        with: 
-          name: debug
-          path: app/build/outputs/apk/debug/app-debug.apk
-
+#      - name: Build project
+#        run: ./gradlew assembleDebug
+#      - name: Upload debug version
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: debug
+#          path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Echo ref
+        run: echo ${{github.ref}}
       - name: Generate API documentation
-          if: ${{github.ref == 'master'}}
-          run: ./gradlew dokkaHtml
+        if: ${{github.ref == 'refs/heads/master'}}
+        run: ./gradlew dokkaHtml
       - name: Deploy API documentation to Github Pages
-          if: ${{github.ref == 'master'}}
-          uses: JamesIves/github-pages-deploy-action@3.7.1
-          with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            BRANCH: gh-pages
-            FOLDER: build/dokka/html
+        if: ${{github.ref == 'refs/heads/master'}}
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build/dokka/html
