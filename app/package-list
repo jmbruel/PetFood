@@ -1,0 +1,172 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.mexator.petfoodinspector.data.local////PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/index.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem///PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/index.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem/LocalFoodItem/#kotlin.Int#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/-local-food-item.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem/id/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/id.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/name.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem/toFoodDetail/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/to-food-detail.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalFoodItem/toFoodItem/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-food-item/to-food-item.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalRepository///PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-repository/index.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalRepository/getDetail/#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-repository/get-detail.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalRepository/getFoodList/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-repository/get-food-list.html
+$dokka.location:com.mexator.petfoodinspector.data.local/LocalRepository/provideAppContext/#android.content.Context/PointingToDeclaration/app/com.mexator.petfoodinspector.data.local/-local-repository/provide-app-context.html
+$dokka.location:com.mexator.petfoodinspector.data.mock////PointingToDeclaration/app/com.mexator.petfoodinspector.data.mock/index.html
+$dokka.location:com.mexator.petfoodinspector.data.mock/MockRepository///PointingToDeclaration/app/com.mexator.petfoodinspector.data.mock/-mock-repository/index.html
+$dokka.location:com.mexator.petfoodinspector.data.mock/MockRepository/getDetail/#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.data.mock/-mock-repository/get-detail.html
+$dokka.location:com.mexator.petfoodinspector.data.mock/MockRepository/getFoodList/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.mock/-mock-repository/get-food-list.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo////PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/index.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodDetail///PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-detail/index.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodDetail/FoodDetail/#com.mexator.petfoodinspector.data.pojo.FoodItem#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-detail/-food-detail.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodDetail/detailText/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-detail/detail-text.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodDetail/foodItem/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-detail/food-item.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem///PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/index.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem/FoodItem/#kotlin.Int#kotlin.String#com.mexator.petfoodinspector.data.DangerLevel#com.mexator.petfoodinspector.ui.data.FoodPicture/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/-food-item.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem/dangerLevel/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/danger-level.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem/id/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/id.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem/imageData/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/image-data.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/FoodItem/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-food-item/name.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/User///PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-user/index.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/User/User/#kotlin.String#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-user/-user.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/User/login/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-user/login.html
+$dokka.location:com.mexator.petfoodinspector.data.pojo/User/password/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data.pojo/-user/password.html
+$dokka.location:com.mexator.petfoodinspector.data////PointingToDeclaration/app/com.mexator.petfoodinspector.data/index.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Danger///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-danger/index.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Danger/colorRes/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-danger/color-res.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Danger/levelString/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-danger/level-string.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Danger/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-danger/name.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Danger/ordinal/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-danger/ordinal.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Safe///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-safe/index.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Safe/colorRes/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-safe/color-res.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Safe/levelString/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-safe/level-string.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Safe/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-safe/name.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Safe/ordinal/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-safe/ordinal.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Treat///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-treat/index.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Treat/colorRes/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-treat/color-res.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Treat/levelString/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-treat/level-string.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Treat/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-treat/name.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel.Treat/ordinal/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/-treat/ordinal.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/index.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel/colorRes/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/color-res.html
+$dokka.location:com.mexator.petfoodinspector.data/DangerLevel/levelString/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-danger-level/level-string.html
+$dokka.location:com.mexator.petfoodinspector.data/FoodRepository///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-food-repository/index.html
+$dokka.location:com.mexator.petfoodinspector.data/FoodRepository/getDetail/#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-food-repository/get-detail.html
+$dokka.location:com.mexator.petfoodinspector.data/FoodRepository/getFoodList/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-food-repository/get-food-list.html
+$dokka.location:com.mexator.petfoodinspector.data/Repository///PointingToDeclaration/app/com.mexator.petfoodinspector.data/-repository/index.html
+$dokka.location:com.mexator.petfoodinspector.data/Repository/getUser/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-repository/get-user.html
+$dokka.location:com.mexator.petfoodinspector.data/Repository/login/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-repository/login.html
+$dokka.location:com.mexator.petfoodinspector.data/Repository/reset/#/PointingToDeclaration/app/com.mexator.petfoodinspector.data/-repository/reset.html
+$dokka.location:com.mexator.petfoodinspector.ui.data////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.LocalFoodPicture///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-local-food-picture/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.LocalFoodPicture/LocalFoodPicture/#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-local-food-picture/-local-food-picture.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.LocalFoodPicture/assetsFile/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-local-food-picture/assets-file.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.RemoteFoodPicture///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-remote-food-picture/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.RemoteFoodPicture/RemoteFoodPicture/#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-remote-food-picture/-remote-food-picture.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture.RemoteFoodPicture/link/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/-remote-food-picture/link.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPicture///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPictureDrawableFactory///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture-drawable-factory/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPictureDrawableFactory/FoodPictureDrawableFactory/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture-drawable-factory/-food-picture-drawable-factory.html
+$dokka.location:com.mexator.petfoodinspector.ui.data/FoodPictureDrawableFactory/createDrawable/#android.content.Context#com.mexator.petfoodinspector.ui.data.FoodPicture/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.data/-food-picture-drawable-factory/create-drawable.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment.Companion///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/-companion/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment.Companion/ARG_FOOD_KEY/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/-companion/-a-r-g_-f-o-o-d_-k-e-y.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment.Companion/TAG/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/-companion/-t-a-g.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment/FoodDetailFragment/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/-food-detail-fragment.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/on-create-view.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment/onDestroyView/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/on-destroy-view.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-fragment/on-view-created.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel.FoodDetailViewState///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/-food-detail-view-state/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel.FoodDetailViewState/FoodDetailViewState/#com.mexator.petfoodinspector.data.pojo.FoodDetail/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/-food-detail-view-state/-food-detail-view-state.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel.FoodDetailViewState/foodDetail/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/-food-detail-view-state/food-detail.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel/FoodDetailViewModel/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/-food-detail-view-model.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel/foodId/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/food-id.html
+$dokka.location:com.mexator.petfoodinspector.ui.fooddetail/FoodDetailViewModel/viewState/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.fooddetail/-food-detail-view-model/view-state.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodHolderFactory///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-holder-factory/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodHolderFactory/FoodHolderFactory/#kotlin.Function1[com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI,kotlin.Unit]/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-holder-factory/-food-holder-factory.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/FoodUI/#kotlin.String#com.mexator.petfoodinspector.ui.data.FoodPicture#com.mexator.petfoodinspector.data.DangerLevel#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/-food-u-i.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/dangerLevel/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/danger-level.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/name/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/name.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/pictureData/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/picture-data.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/uid/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/uid.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodUI/viewType/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-u-i/view-type.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodViewHolder///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-view-holder/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodViewHolder/FoodViewHolder/#ItemFoodBinding#kotlin.Function1[com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI,kotlin.Unit]/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-view-holder/-food-view-holder.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist.recycler/FoodViewHolder/bind/#com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist.recycler/-food-view-holder/bind.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment.Companion///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/-companion/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment.Companion/TAG/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/-companion/-t-a-g.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment/FoodListPageFragment/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/-food-list-page-fragment.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/on-create-view.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment/onDestroyView/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/on-destroy-view.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListPageFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-page-fragment/on-view-created.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel.Companion///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-companion/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel.FoodListViewState///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-food-list-view-state/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel.FoodListViewState/FoodListViewState/#kotlin.Boolean#kotlin.collections.List[com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI]/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-food-list-view-state/-food-list-view-state.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel.FoodListViewState/displayedItems/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-food-list-view-state/displayed-items.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel.FoodListViewState/progress/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-food-list-view-state/progress.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel/FoodListViewModel/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/-food-list-view-model.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel/loadInitialContent/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/load-initial-content.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel/submitQuery/#kotlin.String/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/submit-query.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodlist/FoodListViewModel/viewState/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodlist/-food-list-view-model/view-state.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch/FoodSearchFragment///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/-food-search-fragment/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch/FoodSearchFragment/FoodSearchFragment/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/-food-search-fragment/-food-search-fragment.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch/FoodSearchFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/-food-search-fragment/on-create-view.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch/FoodSearchFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/-food-search-fragment/on-view-created.html
+$dokka.location:com.mexator.petfoodinspector.ui.foodsearch/FoodSearchFragment/searchObservable/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.foodsearch/-food-search-fragment/search-observable.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/BaseHolderFactory///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-base-holder-factory/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/BaseHolderFactory/BaseHolderFactory/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-base-holder-factory/-base-holder-factory.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/BaseHolderFactory/create/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-base-holder-factory/create.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/ViewTyped///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-view-typed/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/ViewTyped/uid/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-view-typed/uid.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.base/ViewTyped/viewType/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.base/-view-typed/view-type.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.common////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.common/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.common/SpaceDecorator///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.common/-space-decorator/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.common/SpaceDecorator/SpaceDecorator/#kotlin.Float/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.common/-space-decorator/-space-decorator.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler.common/SpaceDecorator/getItemOffsets/#android.graphics.Rect#android.view.View#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.State/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler.common/-space-decorator/get-item-offsets.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler////PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/BaseAdapter/#com.mexator.petfoodinspector.ui.recycler.base.BaseHolderFactory/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/-base-adapter.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/getItemCount/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/get-item-count.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/getItemViewType/#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/get-item-view-type.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/items/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/items.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/onBindViewHolder/#com.mexator.petfoodinspector.ui.recycler.BaseViewHolder[com.mexator.petfoodinspector.ui.recycler.base.ViewTyped]#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/on-bind-view-holder.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-adapter/on-create-view-holder.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseViewHolder///PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-view-holder/index.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseViewHolder/BaseViewHolder/#android.view.View/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-view-holder/-base-view-holder.html
+$dokka.location:com.mexator.petfoodinspector.ui.recycler/BaseViewHolder/bind/#TypeParam(bounds=[com.mexator.petfoodinspector.ui.recycler.base.ViewTyped])/PointingToDeclaration/app/com.mexator.petfoodinspector.ui.recycler/-base-view-holder/bind.html
+$dokka.location:com.mexator.petfoodinspector.ui////PointingToDeclaration/app/com.mexator.petfoodinspector.ui/index.html
+$dokka.location:com.mexator.petfoodinspector.ui//dpToPx/android.content.Context#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/dp-to-px.html
+$dokka.location:com.mexator.petfoodinspector.ui//getResources/androidx.viewbinding.ViewBinding#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/get-resources.html
+$dokka.location:com.mexator.petfoodinspector.ui//spToPx/android.content.Context#kotlin.Int/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/sp-to-px.html
+$dokka.location:com.mexator.petfoodinspector.ui/AuthorizedActivity///PointingToDeclaration/app/com.mexator.petfoodinspector.ui/-authorized-activity/index.html
+$dokka.location:com.mexator.petfoodinspector.ui/AuthorizedActivity/AuthorizedActivity/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/-authorized-activity/-authorized-activity.html
+$dokka.location:com.mexator.petfoodinspector.ui/StartActivity///PointingToDeclaration/app/com.mexator.petfoodinspector.ui/-start-activity/index.html
+$dokka.location:com.mexator.petfoodinspector.ui/StartActivity/StartActivity/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/-start-activity/-start-activity.html
+$dokka.location:com.mexator.petfoodinspector.ui/StartActivity/onSupportNavigateUp/#/PointingToDeclaration/app/com.mexator.petfoodinspector.ui/-start-activity/on-support-navigate-up.html
+$dokka.location:com.mexator.petfoodinspector////PointingToDeclaration/app/com.mexator.petfoodinspector/index.html
+$dokka.location:com.mexator.petfoodinspector/AppController///PointingToDeclaration/app/com.mexator.petfoodinspector/-app-controller/index.html
+$dokka.location:com.mexator.petfoodinspector/AppController/AppController/#/PointingToDeclaration/app/com.mexator.petfoodinspector/-app-controller/-app-controller.html
+$dokka.location:com.mexator.petfoodinspector/AppController/onCreate/#/PointingToDeclaration/app/com.mexator.petfoodinspector/-app-controller/on-create.html
+com.mexator.petfoodinspector
+com.mexator.petfoodinspector.data
+com.mexator.petfoodinspector.data.local
+com.mexator.petfoodinspector.data.mock
+com.mexator.petfoodinspector.data.pojo
+com.mexator.petfoodinspector.ui
+com.mexator.petfoodinspector.ui.data
+com.mexator.petfoodinspector.ui.fooddetail
+com.mexator.petfoodinspector.ui.foodlist
+com.mexator.petfoodinspector.ui.foodlist.recycler
+com.mexator.petfoodinspector.ui.foodsearch
+com.mexator.petfoodinspector.ui.recycler
+com.mexator.petfoodinspector.ui.recycler.base
+com.mexator.petfoodinspector.ui.recycler.common
+
