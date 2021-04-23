@@ -25,3 +25,14 @@ jobs:
         with: 
           name: debug
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Generate API documentation
+          if: ${{github.ref == 'master'}}
+          run: ./gradlew dokkaHtml
+      - name: Deploy API documentation to Github Pages
+          if: ${{github.ref == 'master'}}
+          uses: JamesIves/github-pages-deploy-action@3.7.1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: build/dokka/html
