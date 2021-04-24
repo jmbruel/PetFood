@@ -2,11 +2,10 @@ package com.mexator.petfoodinspector.ui.foodlist
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.mexator.petfoodinspector.data.FoodRepository
-import com.mexator.petfoodinspector.data.local.LocalRepository
-import com.mexator.petfoodinspector.data.mock.MockRepository
+import com.mexator.petfoodinspector.domain.data.FoodItem
 import com.mexator.petfoodinspector.data.network.RemoteRepository
-import com.mexator.petfoodinspector.data.pojo.FoodItem
+import com.mexator.petfoodinspector.domain.FoodRepository
+import com.mexator.petfoodinspector.ui.data.toUIDangerLevel
 import com.mexator.petfoodinspector.ui.foodlist.recycler.FoodUI
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -65,7 +64,12 @@ class FoodListViewModel : ViewModel() {
         food.name.toLowerCase(Locale.getDefault()).contains(query)
 
     private fun mapItem(foodItem: FoodItem): FoodUI {
-        return FoodUI(foodItem.name, foodItem.imageData, foodItem.dangerLevel, foodItem.id)
+        return FoodUI(
+            foodItem.name,
+            foodItem.imageData,
+            foodItem.dangerLevel.toUIDangerLevel(),
+            foodItem.id
+        )
     }
 
     companion object {

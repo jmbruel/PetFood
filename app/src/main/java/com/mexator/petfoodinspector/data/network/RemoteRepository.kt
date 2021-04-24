@@ -2,11 +2,14 @@ package com.mexator.petfoodinspector.data.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.mexator.petfoodinspector.BuildConfig
-import com.mexator.petfoodinspector.data.DangerLevel
-import com.mexator.petfoodinspector.data.FoodID
-import com.mexator.petfoodinspector.data.FoodRepository
 import com.mexator.petfoodinspector.data.UserRepository
-import com.mexator.petfoodinspector.data.pojo.*
+import com.mexator.petfoodinspector.data.network.dto.RemoteFoodItem
+import com.mexator.petfoodinspector.data.network.dto.UserAuthData
+import com.mexator.petfoodinspector.domain.FoodID
+import com.mexator.petfoodinspector.domain.FoodRepository
+import com.mexator.petfoodinspector.domain.data.FoodDetail
+import com.mexator.petfoodinspector.domain.data.FoodItem
+import com.mexator.petfoodinspector.domain.data.User
 import com.mexator.petfoodinspector.ui.data.FoodPicture
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.core.Completable
@@ -60,7 +63,7 @@ object RemoteRepository : FoodRepository, UserRepository {
     override fun isUserLoggedIn(): Boolean = currentUser != null
 
     override fun login(username: String, password: String): Completable =
-        petFoodAPI.logIn(UserAuth(username, password))
+        petFoodAPI.logIn(UserAuthData(username, password))
             .doOnSuccess { currentUser = it }
             .ignoreElement()
 
@@ -70,7 +73,7 @@ object RemoteRepository : FoodRepository, UserRepository {
     }
 
     override fun register(username: String, password: String): Single<User> =
-        petFoodAPI.signUp(UserAuth(username, password))
+        petFoodAPI.signUp(UserAuthData(username, password))
             .doOnSuccess { currentUser = it }
 
     override fun getSelfUser(): Maybe<User> =
@@ -80,7 +83,7 @@ object RemoteRepository : FoodRepository, UserRepository {
         FoodItem(
             id,
             name,
-            DangerLevel.Danger,
+            dangerLevel,
             FoodPicture.RemoteFoodPicture(imageUrl)
         )
 }

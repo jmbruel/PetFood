@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.mexator.petfoodinspector.data.UserRepository
 import com.mexator.petfoodinspector.data.network.RemoteRepository
-import com.mexator.petfoodinspector.data.pojo.User
+import com.mexator.petfoodinspector.domain.data.User
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign

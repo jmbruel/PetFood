@@ -3,7 +3,7 @@ package com.mexator.petfoodinspector.ui.auth.signup
 import androidx.lifecycle.ViewModel
 import com.mexator.petfoodinspector.data.UserRepository
 import com.mexator.petfoodinspector.data.network.RemoteRepository
-import com.mexator.petfoodinspector.data.pojo.errorMessage
+import com.mexator.petfoodinspector.data.network.dto.errorMessage
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign

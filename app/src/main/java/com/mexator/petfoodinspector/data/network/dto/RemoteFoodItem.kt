@@ -1,5 +1,6 @@
-package com.mexator.petfoodinspector.data.pojo
+package com.mexator.petfoodinspector.data.network.dto
 
+import com.mexator.petfoodinspector.domain.data.DangerLevel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -12,8 +13,7 @@ class RemoteFoodItem(
     @SerialName("productImageUrl")
     val imageUrl: String,
     @SerialName("productDangLevel")
-    // TODO make it an enum
-    val dangerLevel: Int,
+    val dangerLevel: DangerLevel,
     @SerialName("productDescription")
     val productDescription: String
 )

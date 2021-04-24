@@ -1,6 +1,6 @@
 package com.mexator.petfoodinspector.data
 
-import com.mexator.petfoodinspector.data.pojo.User
+import com.mexator.petfoodinspector.domain.data.User
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Maybe
 import io.reactivex.rxjava3.core.Single

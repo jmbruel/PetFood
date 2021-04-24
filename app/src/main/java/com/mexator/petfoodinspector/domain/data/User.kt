@@ -1,15 +1,7 @@
-package com.mexator.petfoodinspector.data.pojo
+package com.mexator.petfoodinspector.domain.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-@Serializable
-data class UserAuth(
-    @SerialName("email")
-    val login: String,
-    @SerialName("password")
-    val password: String
-)
 
 @Serializable
 data class User(

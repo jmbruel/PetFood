@@ -1,4 +1,4 @@
-package com.mexator.petfoodinspector.data.pojo
+package com.mexator.petfoodinspector.data.network.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
